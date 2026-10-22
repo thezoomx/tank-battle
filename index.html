@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#070a0f">
+  <title>坦克大战 · Tank Battle</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="hud">
+      <div class="hud-item"><span>得分 SCORE</span><strong id="score">0</strong></div>
+      <div class="hud-item"><span>生命 LIVES</span><strong id="lives">❤❤❤</strong></div>
+      <div class="hud-item"><span>关卡 LEVEL</span><strong id="level">1</strong></div>
+      <div class="hud-item"><span>最高分 BEST</span><strong id="high">0</strong></div>
+      <button id="muteBtn" class="icon-btn" type="button" title="音效开关 (M)" aria-label="音效开关">🔊</button>
+    </header>
+
+    <div class="stage">
+      <canvas id="game" width="600" height="600" aria-label="坦克大战游戏画面"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="overlay-card">
+          <h1 id="overlayTitle">坦克大战</h1>
+          <p id="overlayText">守住基地，消灭所有敌方坦克！</p>
+          <button id="startBtn" class="btn" type="button">开始游戏</button>
+          <p class="keys">WASD / 方向键 移动 · 空格 开火 · P 暂停</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="touch" id="touch">
+      <div class="dpad">
+        <button class="dpad-btn up"    type="button" data-key="up"    aria-label="上">▲</button>
+        <button class="dpad-btn left"  type="button" data-key="left"  aria-label="左">◀</button>
+        <button class="dpad-btn down"  type="button" data-key="down"  aria-label="下">▼</button>
+        <button class="dpad-btn right" type="button" data-key="right" aria-label="右">▶</button>
+      </div>
+      <button class="fire-btn" type="button" data-key="fire">开火</button>
+    </div>
+
+    <footer class="tips">WASD / 方向键 移动 · 空格 开火 · P 暂停 · R 重新开始 · M 静音</footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
